@@ -1,0 +1,3 @@
+assignment 1.02: Load/Save Dungeon
+
+In this program, we are supposed to include functionalities for loading and saving the dungeons. I successfully implemented both those functionalities. I used to functions, load() and save() to achieve them. load() reads data from file, populates the data structures and uses another newer function ldgen() to actually populate the dungeon, (char d[][]). save() just loads the values back to disk. gen() generates a new dungeon, its used if --load is not used.

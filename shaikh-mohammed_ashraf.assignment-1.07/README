@@ -1,0 +1,7 @@
+Assignment 1.07: Parsing Monster Definitions
+
+I began using Dr. Jeremy's code. I tried to model my error handling and parsing display after asking him a lot of questions.
+I implemented mondesc class in parsermon.h to store my parsed info. 
+parsermon.cpp deals with function (int fileparser()) and methods (int parsemon()) to handle parsing.
+int deschecker() deals with some error detection in parsing but most of it is done in parsemon().
+I have some commented portions too which are like displaying different things or different implementations.

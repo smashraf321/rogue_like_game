@@ -1,0 +1,18 @@
+Assignment 1.08: Loading Monsters and Objects
+
+This assignment I am still uding Dr. Jeremy's solution drop. 
+I implemented a new class called object_class that is used for 
+storing instances of objects. I have it in a file called objectclass.cpp
+I have implemented two methods that are responsible for
+generation of objects and monsters from their description. 
+One is gen_monster_desc(dungeon *d, int where_from) in npc.h and npc.cpp
+This generates monsters, where from is for knowing whether you're generating 
+for the first time i.e from main() or by taking a staircase.
+This was important because of special case of generating unique monters.
+The function obj_factory(dungeon *d, int where_from) is in 
+objectclass.cpp and the header for it. It generates object along the same
+lines for artifact objects. 
+Changes were made in the io.cpp file for printing new map for objects
+called object_map which is the latest member addition for dungeon class.
+Changes were also made in move.cpp to know if the monster is dead
+for unique monster.

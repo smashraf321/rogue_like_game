@@ -1,0 +1,9 @@
+
+assignment 1.02:
+9/11: Started testing functionalities for reading from files and writing to files
+9/12: Finally finished successful loading and saving dungeons, converted my 2d array for storing room information to pointers. Included new funtions for loading and saving.
+
+assignment 1.01:
+8/31: Started the assignment by printing out the dungeon with borders and randomly generated and successfully placed rooms. 
+9/01: Racked my brains over how to connect the rooms.
+9/02: Finally figured out a way to successfully connect the rooms as per the assignment requirement.

@@ -1,0 +1,10 @@
+Assignment 1.09: PC Equipment and updated combat
+
+This assignment took a lot of work, If I quit it still shows image of I win,
+but I changed the win condition to when I kill BOSS type monsters. Made lots of changes in move.cpp and io.cpp.
+Implemented all functions in pdf, I show name, speed, damage etc. for when item or monster desc is asked, 
+for monster desc, i show for all monsters in current dungeon which are visible without fog of war. 
+i update speed of PC wheneevr I wear items that increase or decrease speed.
+I also also update speed when I unequip. 
+For damage I do PC base damage and also all equipped items damage. 
+Works well on slackware. didn't test on pyrite.

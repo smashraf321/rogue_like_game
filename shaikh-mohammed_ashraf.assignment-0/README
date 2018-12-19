@@ -1,0 +1,4 @@
+
+This is the program for finding all open  knights tour. Here, I use recursive backtracking to break the problem into smaller pieces (subproblems for finding path) and compute all the possible combinations.
+
+I use the function 'place' to place the knight on the board (change the value of 'board' 2D array to 1 at the required index, 'board' array was initially all zeros) and recursively call it over and over again for placing the knight in subsequent valid and empty locations. If I was able to successfully place the knight 25 times, I just print out the pattern. If I was unable to place the knight 25 times, then I replace the board value at the required index with 0 and explore other paths. I also explore other paths even if I was successfully able to place the knight 25 times. That's how I got all the 1728 combinations.

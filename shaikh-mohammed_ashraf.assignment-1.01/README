@@ -1,0 +1,8 @@
+
+ Dungeon Generration: dungeon.c
+
+ Here, I start out by generating an empty dungeon with borders by using function dbgen(). I then generate the rooms using rgen(). Here I essentially generate the top left corner coordinates and dimensions of room and store it in a 2D array. I also use a function called rndm() which generates a random number within a range.
+
+I then proceed to place the rooms in the dungeon with rplace(). If I'm unable to place without overlap or with no gap between rooms, I generate the rooms again.
+
+I then use rconnect() to connect the rooms and cconnect() to actually draw out the corridors. I finally print out the dungeon using dprint().

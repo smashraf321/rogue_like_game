@@ -1,0 +1,4 @@
+assignment 1.04: Player and monsters
+
+This assignment required us to use a lot of functionalities to implement the monster movements. I have a priority queue called waiting_list.
+I also have different functions for making my monster movements. 5 monster is telepathic and can tunnel through rocks. He usually eats the player.

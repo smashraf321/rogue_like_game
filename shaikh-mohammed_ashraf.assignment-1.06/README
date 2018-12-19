@@ -1,0 +1,13 @@
+assignment 1.06: "fog of war" and porting to C++
+
+NOTE: I am using my own code which does not have an organizational structure like Dr. Jeremy's code.
+      Hence I am using a class for my waiting list for next turn for movement.
+      Its a queue where monsters and PC are stored while they wait for their turn to move.
+      This approach (my game development logic) doesn't make use of inheritance or similar concepts. 
+      Using inheritance would require major refactoring. 
+      According to post on Piazza Dr. jeremy said its okay not to use inheritance if we using our own code.
+
+In this assignment, I implement functions like foggy_terrain_updater() and print_for_teleportation().
+I have a map called foggy_terrain[][] that keeps the remembered terrain. Its updated by foggy_terrain_updater()
+Displaying star and map for teleporting is managed by print_for_teleportation().
+invalid_user_input_teleportation manages moving of star and placing PC when teleporting.

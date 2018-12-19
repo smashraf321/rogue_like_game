@@ -1,0 +1,9 @@
+assignment 1.05: User Interface with ncurses
+
+This assignment required us to control PC. 
+I changed my game_print() function to print on ncurses screen. The ncurses environment is initialized in main though. 
+The menu is actually another window created atop the dungeon screen. Its created  when user presses 'm'. Gets deleted upon 'esc'.
+The menu displays 14 monsters (from those who're alive) at a time page by page. 
+I don't scroll one monster at a time since it'll be tedious for long monster list.
+Pressing '<'/'>' on appropriate Stairs call the new_dungeon() which creates a different and new dungeon and monsters.
+Also, game is paused when menu is opened and invalid keys do nothing.

@@ -1,0 +1,8 @@
+assignment 1.03: shortest path finding algorithm
+
+In this assignment, I implement djikstra's algorithms for both tunneling (tdjikstra()) and non tunneling (ntdjikstra()) monsters. 
+These functions have arrays called snuqt[] and snuqnt[] to keep track of seen and unvisited neighbours. By seen, I mean their cost is now known.
+I also have arrays vst[] and vsnt[] to keep track of how many nodes I have visited, so basically a visited set.
+I also have two functions for sorting (sortt() and sortnt()) the snuqt[] and snuqnt[] in increasing order of distances from PC(@). 
+The distances of every node from PC's node are stored in 2D arrays dat[][] and dant[][] which have all values except PC's node as 9999 which is my version of infinite
+I essentially make sure that I visit all the nodes and have the distances updated along the seeing your neighbor process.
