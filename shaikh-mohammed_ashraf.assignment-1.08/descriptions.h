@@ -7,8 +7,8 @@
 # include <cstring>
 # include "dice.h"
 //#include "dungeon.h"
-typedef struct dungeon dungeon_t;
-//typedef dungeon dungeon_t;
+//typedef struct dungeon dungeon_t;
+typedef class dungeon dungeon_t;
 
 uint32_t parse_descriptions(dungeon_t *d);
 uint32_t print_descriptions(dungeon_t *d);
@@ -86,7 +86,7 @@ class object_description {
                          color(0),  hit(),         damage(),
                          dodge(),   defence(),     weight(),
                          speed(),   attribute(),   value(),
-    artifact(false), rarity(0), 
+    artifact(false), rarity(0),
     uniqueness(false),
     picked_up(false)
   {

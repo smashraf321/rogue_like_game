@@ -7,8 +7,9 @@
 
 # include "dice.h"
 # include "npc.h"
-
-typedef struct dungeon dungeon_t;
+// struct is changed to class so structs no longer work
+//typedef struct dungeon dungeon_t;
+typedef class dungeon dungeon_t;
 
 uint32_t parse_descriptions(dungeon_t *d);
 uint32_t print_descriptions(dungeon_t *d);

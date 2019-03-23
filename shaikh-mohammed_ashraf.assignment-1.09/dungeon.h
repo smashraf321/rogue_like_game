@@ -60,8 +60,8 @@ class pc;
 
 class dungeon {
  public:
- dungeon() : num_rooms(0), rooms(0), game_over(false), map{ter_wall}, hardness{0},
-             pc_distance{0}, pc_tunnel{0}, character_map{0}, PC(0),
+ dungeon() : num_rooms(0), rooms(0), game_over(false), map{{ter_wall}}, hardness{{0}},
+             pc_distance{{0}}, pc_tunnel{{0}}, character_map{{0}}, PC(0),
              num_monsters(0), max_monsters(0), character_sequence_number(0),
              time(0), is_new(0), quit(0), monster_descriptions(),
              object_descriptions() {}

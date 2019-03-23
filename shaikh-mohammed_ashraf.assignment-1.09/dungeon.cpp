@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdint.h>
-#include <endian.h>
+//#include <endian.h>
+//#include <machine/endian.h>
+#include <libkern/OSByteOrder.h>
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <limits.h>
@@ -14,6 +16,22 @@
 #include "npc.h"
 #include "io.h"
 #include "object.h"
+
+#define htobe16(x) OSSwapHostToBigInt16(x)
+#define htole16(x) OSSwapHostToLittleInt16(x)
+#define be16toh(x) OSSwapBigToHostInt16(x)
+#define le16toh(x) OSSwapLittleToHostInt16(x)
+
+#define htobe32(x) OSSwapHostToBigInt32(x)
+#define htole32(x) OSSwapHostToLittleInt32(x)
+#define be32toh(x) OSSwapBigToHostInt32(x)
+#define le32toh(x) OSSwapLittleToHostInt32(x)
+
+#define htobe64(x) OSSwapHostToBigInt64(x)
+#define htole64(x) OSSwapHostToLittleInt64(x)
+#define be64toh(x) OSSwapBigToHostInt64(x)
+#define le64toh(x) OSSwapLittleToHostInt64(x)
+
 
 #define DUMP_HARDNESS_IMAGES 0
 
@@ -57,7 +75,7 @@ static void dijkstra_corridor(dungeon *d, pair_t from, pair_t to)
     }
     initialized = 1;
   }
-  
+
   for (y = 0; y < DUNGEON_Y; y++) {
     for (x = 0; x < DUNGEON_X; x++) {
       path[y][x].cost = INT_MAX;
@@ -156,7 +174,7 @@ static void dijkstra_corridor_inv(dungeon *d, pair_t from, pair_t to)
     }
     initialized = 1;
   }
-  
+
   for (y = 0; y < DUNGEON_Y; y++) {
     for (x = 0; x < DUNGEON_X; x++) {
       path[y][x].cost = INT_MAX;
@@ -564,7 +582,7 @@ static void place_stairs(dungeon *d)
            (p[dim_x] = rand_range(1, DUNGEON_X - 2)) &&
            ((mappair(p) < ter_floor)                 ||
             (mappair(p) > ter_stairs)))
-      
+
       ;
     mappair(p) = ter_stairs_up;
   } while (rand_under(2, 4));
@@ -789,7 +807,7 @@ int read_rooms(dungeon *d, FILE *f)
 
       exit(-1);
     }
-        
+
 
     /* After reading each room, we need to reconstruct them in the dungeon. */
     for (y = d->rooms[i].position[dim_y];
@@ -885,7 +903,7 @@ int read_dungeon(dungeon *d, char *file)
   d->PC->position[dim_x] = i;
   fread(&i, 1, 1, f);
   d->PC->position[dim_y] = i;
-  
+
   read_dungeon_map(d, f);
   d->num_rooms = calculate_num_rooms(buf.st_size);
   d->rooms = (room_t *) malloc(sizeof (*d->rooms) * d->num_rooms);
@@ -985,10 +1003,10 @@ void render_hardness_map(dungeon *d)
 {
   /* The hardness map includes coordinates, since it's larger *
    * size makes it more difficult to index a position by eye. */
-  
+
   pair_t p;
   int i;
-  
+
   putchar('\n');
   printf("   ");
   for (i = 0; i < DUNGEON_X; i++) {
